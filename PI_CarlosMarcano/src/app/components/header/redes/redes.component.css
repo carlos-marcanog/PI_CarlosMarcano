@@ -1,0 +1,10 @@
+a{
+    margin-right: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    transition: .4s;
+    color: #2073c2;
+}
