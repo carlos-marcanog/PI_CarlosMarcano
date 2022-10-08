@@ -1,0 +1,9 @@
+.container{
+    padding-top: 10px;
+    padding-left: 20px;
+    background-color: rgb(223, 223, 223);
+}
+
+.container li{
+    background-color: rgb(223, 223, 223);
+}

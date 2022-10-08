@@ -1,0 +1,58 @@
+.container{
+    padding-top: 10px;
+    padding-left: 20px;
+    background-color: white;
+}
+
+.card{
+    align-items: center;
+    width: 250px;
+}
+
+.card-title{
+    font-size: 15px;
+}
+
+.progress{
+    width: 200px;
+}
+
+.img-com{
+    margin-top: 10px;
+    width: 150px;
+    height: 100px;
+}
+
+.img-res{
+    margin-top: 10px;
+    width: 100px;
+    height: 100px;
+}
+
+.img-team{
+    margin-top: 10px;
+    width: 120px;
+    height: 100px;
+}
+
+.img-rel{
+    margin-top: 10px;
+    width: 110px;
+    height: 100px;
+}
+
+.img-res{
+    margin-top: 10px;
+    width: 100px;
+    height: 100px;
+}
+
+.img-adp{
+    margin-top: 10px;
+    width: 100px;
+    height: 100px;
+}
+
+.pro-idioma{
+    width: auto;
+}
