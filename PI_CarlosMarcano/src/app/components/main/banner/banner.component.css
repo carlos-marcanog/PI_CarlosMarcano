@@ -1,0 +1,8 @@
+img{
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+.container{
+    --bs-gutter-x:0;
+}

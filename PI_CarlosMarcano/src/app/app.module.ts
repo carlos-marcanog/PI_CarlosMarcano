@@ -5,9 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LogoComponent } from './components/header/logo/logo.component';
-import { BannerComponent } from './components/header/banner/banner.component';
-import { RedesComponent } from './components/header/redes/redes.component';
-import { YoProgramoComponent } from './components/header/yo-programo/yo-programo.component';
+import { BannerComponent } from './components/main/banner/banner.component';
+import { NavBarComponent } from './components/header/navbar/navbar.component';
 import { MainComponent } from './components/main/main.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AcercadeComponent } from './components/main/acercade/acercade.component';
@@ -23,8 +22,7 @@ import { ProyectosComponent } from './components/main/proyectos/proyectos.compon
     HeaderComponent,
     LogoComponent,
     BannerComponent,
-    RedesComponent,
-    YoProgramoComponent,
+    NavBarComponent,
     MainComponent,
     FooterComponent,
     AcercadeComponent,

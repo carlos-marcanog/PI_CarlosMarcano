@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     height: auto;
-    background-color: rgb(56, 56, 56);
+    background-color: #212529;
 }
 
 @media(max-width: 576px){
