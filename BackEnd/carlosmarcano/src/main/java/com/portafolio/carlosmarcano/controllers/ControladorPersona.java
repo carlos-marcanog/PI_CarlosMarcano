@@ -13,29 +13,36 @@ import org.springframework.web.bind.annotation.*;
 public class ControladorPersona {
 
     private final ServicioPersona servicioPersona;
-    @PostMapping
+
+    @GetMapping("/listar")
+    public ResponseEntity listarPersonas() {
+        return new ResponseEntity(servicioPersona.listarPersonas(), HttpStatus.OK);
+    }
+
+    @PostMapping("/guardar")
     public ResponseEntity guardarPersona(@RequestBody Persona persona){
         return new ResponseEntity(servicioPersona.guardarPersona(persona), HttpStatus.CREATED);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/obtener/{id}")
     public ResponseEntity obtenerPersona(@PathVariable("id") Long idPersona) {
         return new ResponseEntity(servicioPersona.obtenerPersona(idPersona), HttpStatus.OK);
+
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/modificar/{id}")
     public ResponseEntity modificarPersona(@PathVariable("id") Long idPersona, @RequestBody Persona persona) {
         return new ResponseEntity(servicioPersona.modificarPersona(idPersona,persona), HttpStatus.OK);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/eliminar/{id}")
     public ResponseEntity eliminarPersona(@PathVariable("id") Long idPersona) {
         boolean respuesta = servicioPersona.eliminarPersona(idPersona);
         if (respuesta == true){
-            return new ResponseEntity(HttpStatus.OK);
+            return new ResponseEntity("Persona Eliminada", HttpStatus.OK);
         }
         else{
-            return new ResponseEntity(HttpStatus.NOT_FOUND);
+            return new ResponseEntity("Persona No Existe",HttpStatus.NOT_FOUND);
         }
     }
 }
