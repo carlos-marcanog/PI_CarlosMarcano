@@ -8,6 +8,8 @@ public interface ServicioPersona {
 
     List<Persona> listarPersonas();
 
+    Persona traerPersona(Persona persona);
+
     Persona guardarPersona(Persona persona);
 
     Persona obtenerPersona(Long id);

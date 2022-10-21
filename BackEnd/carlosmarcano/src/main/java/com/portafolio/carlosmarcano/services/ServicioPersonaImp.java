@@ -19,6 +19,12 @@ public class ServicioPersonaImp implements ServicioPersona{
     }
 
     @Override
+    public Persona traerPersona(Persona persona) {
+        return null;
+    }
+
+
+    @Override
     public Persona guardarPersona(Persona persona) {
         return repositorioPersona.save(persona);
     }
