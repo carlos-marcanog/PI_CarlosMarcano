@@ -5,6 +5,7 @@ import com.portafolio.carlosmarcano.services.ServicioPersona;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -21,6 +22,7 @@ public class ControladorPersona {
         return new ResponseEntity(servicioPersona.listarPersonas(), HttpStatus.OK);
     }
 
+    @PreAuthorize("hashRole('ADMIN_ROLE')")
     @PostMapping("/guardar")
     public ResponseEntity guardarPersona(@RequestBody Persona persona){
         return new ResponseEntity(servicioPersona.guardarPersona(persona), HttpStatus.CREATED);
@@ -32,11 +34,13 @@ public class ControladorPersona {
 
     }
 
+    @PreAuthorize("hashRole('ADMIN_ROLE')")
     @PutMapping("/modificar/{id}")
     public ResponseEntity modificarPersona(@PathVariable("id") Long idPersona, @RequestBody Persona persona) {
         return new ResponseEntity(servicioPersona.modificarPersona(idPersona,persona), HttpStatus.OK);
     }
 
+    @PreAuthorize("hashRole('ADMIN_ROLE')")
     @DeleteMapping("/eliminar/{id}")
     public ResponseEntity eliminarPersona(@PathVariable("id") Long idPersona) {
         boolean respuesta = servicioPersona.eliminarPersona(idPersona);
