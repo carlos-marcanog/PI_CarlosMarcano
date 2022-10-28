@@ -18,6 +18,8 @@ import { ProyectosComponent } from './components/main/proyectos/proyectos.compon
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
+import { FormsModule } from '@angular/forms';
+import { interceptorProvider } from './services/interceptorService';
 
 @NgModule({
   declarations: [
@@ -41,8 +43,11 @@ import { HomeComponent } from './components/home/home.component';
     AppRoutingModule,
     HttpClientModule,
     NgCircleProgressModule.forRoot({}),
+    FormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent],
+  providers: [
+    { provide: interceptorProvider, useValue: undefined }
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

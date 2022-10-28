@@ -22,7 +22,7 @@ public class ControladorPersona {
         return new ResponseEntity(servicioPersona.listarPersonas(), HttpStatus.OK);
     }
 
-    @PreAuthorize("hashRole('ADMIN_ROLE')")
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/guardar")
     public ResponseEntity guardarPersona(@RequestBody Persona persona){
         return new ResponseEntity(servicioPersona.guardarPersona(persona), HttpStatus.CREATED);
@@ -34,13 +34,13 @@ public class ControladorPersona {
 
     }
 
-    @PreAuthorize("hashRole('ADMIN_ROLE')")
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/modificar/{id}")
     public ResponseEntity modificarPersona(@PathVariable("id") Long idPersona, @RequestBody Persona persona) {
         return new ResponseEntity(servicioPersona.modificarPersona(idPersona,persona), HttpStatus.OK);
     }
 
-    @PreAuthorize("hashRole('ADMIN_ROLE')")
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/eliminar/{id}")
     public ResponseEntity eliminarPersona(@PathVariable("id") Long idPersona) {
         boolean respuesta = servicioPersona.eliminarPersona(idPersona);
