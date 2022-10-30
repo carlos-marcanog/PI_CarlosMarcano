@@ -24,6 +24,9 @@ public class Experiencia {
     public Experiencia(String nombreExp, String descripcionExp, String cargo, String fechaIngreso, String fechaEgreso) {
         this.nombreExp = nombreExp;
         this.descripcionExp = descripcionExp;
+        this.cargo = cargo;
+        this.fechaIngreso = fechaIngreso;
+        this.fechaEgreso = fechaEgreso;
     }
 
     public int getId() {

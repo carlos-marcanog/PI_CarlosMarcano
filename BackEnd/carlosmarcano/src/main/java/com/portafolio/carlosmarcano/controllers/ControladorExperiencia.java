@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/experiencia")
+@RequestMapping("experiencia")
 @CrossOrigin(origins = {"http://localhost:4200"})
 public class ControladorExperiencia {
 
@@ -26,7 +26,7 @@ public class ControladorExperiencia {
         return new ResponseEntity(list, HttpStatus.OK);
     }
 
-    @GetMapping("/crear")
+    @PostMapping("/crear")
     public ResponseEntity<?> create(@RequestBody DtoExperiencia dtoExperiencia){
         if(StringUtils.isBlank(dtoExperiencia.getNombreExp())){
             return new ResponseEntity(new Mensaje("El Nombre es Obligatorio"), HttpStatus.BAD_REQUEST);
@@ -35,7 +35,7 @@ public class ControladorExperiencia {
             return new ResponseEntity(new Mensaje("Esa Experiencia ya Existe"), HttpStatus.BAD_REQUEST);
         }
         Experiencia experiencia = new Experiencia(dtoExperiencia.getNombreExp(), dtoExperiencia.getDescripcionExp(),
-                                                  dtoExperiencia.getCargo(), dtoExperiencia.getFechaIngeso(),
+                                                  dtoExperiencia.getCargo(), dtoExperiencia.getFechaIngreso(),
                                                   dtoExperiencia.getFechaEgreso());
         servicioExperiencia.save(experiencia);
 
@@ -59,7 +59,7 @@ public class ControladorExperiencia {
         experiencia.setNombreExp(dtoExperiencia.getNombreExp());
         experiencia.setDescripcionExp(dtoExperiencia.getDescripcionExp());
         experiencia.setCargo(dtoExperiencia.getCargo());
-        experiencia.setFechaIngreso(dtoExperiencia.getFechaIngeso());
+        experiencia.setFechaIngreso(dtoExperiencia.getFechaIngreso());
         experiencia.setFechaEgreso(dtoExperiencia.getFechaEgreso());
 
         servicioExperiencia.save(experiencia);

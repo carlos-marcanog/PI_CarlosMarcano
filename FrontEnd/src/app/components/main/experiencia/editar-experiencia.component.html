@@ -1,10 +1,10 @@
-<div class="modal fade" id="modalNewExp">
+<div class="modal fade" id="modalEditExp" *ngIf="expLab">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
 
         <!-- Modal Header -->
         <div class="modal-header">
-            <h4 class="modal-title fw-bold text-uppercase">Agregar Nueva Experiencia</h4>
+            <h4 class="modal-title fw-bold text-uppercase">Editar Experiencia</h4>
             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
 
@@ -12,37 +12,37 @@
         <div class="modal-body">
             <div class="container-form">
             <p class="text-black-50">Por favor complete los campos</p>
-                <form #form="ngForm" (ngSubmit)="onCreate()" novalidate>
+                <form (ngSubmit)="onUpdate()" #formEdit="ngForm"  novalidate>
 
                     <div class="form-floating mb-2">
-                        <input type="text" class="form-control" id="nombreExp" name="nombreExp" [(ngModel)]="nombreExp" placeholder="Empresa" required>
+                        <input type="text" class="form-control" id="nombreExp" name="nombreExp" [(ngModel)]="expLab.nombreExp" placeholder="Empresa" required>
                         <label class="form-label" for="nombreExp">Empresa:</label>
                     </div>
 
 
                     <div class="form-floating mb-2">
-                        <input type="text" class="form-control" id="descripcionExp" name="descripcionExp" [(ngModel)]="descripcionExp" placeholder="Descripcion" required>
+                        <input type="text" class="form-control" id="descripcionExp" name="descripcionExp" [(ngModel)]="expLab.descripcionExp" placeholder="Descripcion" required>
                         <label class="form-label" for="descripcionExp">Descripcion:</label>
                     </div>
 
                     <div class="form-floating mb-2">
-                        <input type="text" class="form-control" id="cargo" name="cargo" [(ngModel)]="cargo" placeholder="Cargo" required>
+                        <input type="text" class="form-control" id="cargo" name="cargo" [(ngModel)]="expLab.cargo" placeholder="Cargo" required>
                         <label class="form-label" for="cargo">Cargo:</label>
                     </div>
 
                     <div class="form-floating mb-2">
-                        <input type="text" class="form-control" id="fechaIngreso" name="fechaIngreso" [(ngModel)]="fechaIngreso" placeholder="Fecha Ingreso"required>
+                        <input type="text" class="form-control" id="fechaIngreso" name="fechaIngreso" [(ngModel)]="expLab.fechaIngreso" placeholder="Fecha Ingreso"required>
                         <label class="form-label" for="fechaIngreso">Fecha Ingreso:</label>
                     </div>
 
                     <div class="form-floating mb-2">
-                        <input type="text" class="form-control" id="fechaEgreso" name="fechaEgreso" [(ngModel)]="fechaEgreso" placeholder="Fecha Egreso">
+                        <input type="text" class="form-control" id="fechaEgreso" name="fechaEgreso" [(ngModel)]="expLab.fechaEgreso" placeholder="Fecha Egreso">
                         <label class="form-label" for="fechaEgreso">Fecha Egreso:</label>
                     </div>
 
                     <!-- Submit button -->
                     <div class="botones">
-                        <button class="btn btn-primary m-4" data-bs-dismiss="modal"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
+                        <button class="btn btn-primary m-4" data-bs-dismiss="modal"><i class="fa-solid fa-floppy-disk"></i> Actualizar</button>
                     </div>
                 </form>
             </div>

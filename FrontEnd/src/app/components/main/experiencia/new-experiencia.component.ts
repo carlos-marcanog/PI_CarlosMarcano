@@ -26,10 +26,10 @@ export class NewExperienciaComponent implements OnInit {
       this.cargo, this.fechaIngreso, this.fechaEgreso);
       this.servicioExp.save(exp).subscribe(data => {
       alert("Experiencia Agregada");
-      this.router.navigate(['']);
+      window.location.reload();
     }, err =>{
       alert("Error al Agregar Experiencia");
-      this.router.navigate(['']);
+      window.location.reload();
     });
   }
 

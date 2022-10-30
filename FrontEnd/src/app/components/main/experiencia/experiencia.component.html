@@ -2,10 +2,10 @@
     <table>
         <thead>
             <h4>Experiencia</h4> 
-            <button class="btn btn-success" type="button" routerLink="/nuevaexp" *ngIf="isLogged"><i class="fa-solid fa-plus"></i></button>
+            <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#modalNewExp" *ngIf="isLogged"><i class="fa-solid fa-plus"></i></button>
         </thead>
         <tbody>
-            <!-- <tr *ngFor="let Experiencia of exp">
+            <tr *ngFor="let Experiencia of exp">
                 <td>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
@@ -21,12 +21,14 @@
                     </ul>
                 </td>
                 <td>
-                    Editar
+                    <button *ngIf="isLogged"><i class="fa-solid fa-pen-to-square"></i></button>
                 </td>
                 <td>
-                    Borrar
+                    <button *ngIf="isLogged"><i class="fa-solid fa-trash" ></i> </button>
                 </td>
-            </tr> -->
+            </tr>
         </tbody>
     </table>
 </div>
+<app-new-experiencia></app-new-experiencia>
+<app-editar-experiencia></app-editar-experiencia>

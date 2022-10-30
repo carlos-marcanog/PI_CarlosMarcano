@@ -13,18 +13,18 @@ public class DtoExperiencia {
     private String cargo;
 
     @NotBlank
-    private String fechaIngeso;
+    private String fechaIngreso;
 
     private String fechaEgreso;
 
     public DtoExperiencia() {
     }
 
-    public DtoExperiencia(String nombreExp, String descripcionExp, String cargo, String fechaIngeso, String fechaEgreso) {
+    public DtoExperiencia(String nombreExp, String descripcionExp, String cargo, String fechaIngreso, String fechaEgreso) {
         this.nombreExp = nombreExp;
         this.descripcionExp = descripcionExp;
         this.cargo = cargo;
-        this.fechaIngeso = fechaIngeso;
+        this.fechaIngreso = fechaIngreso;
         this.fechaEgreso = fechaEgreso;
     }
 
@@ -50,12 +50,12 @@ public class DtoExperiencia {
         this.cargo = cargo;
     }
 
-    public String getFechaIngeso() {
-        return fechaIngeso;
+    public String getFechaIngreso() {
+        return fechaIngreso;
     }
 
-    public void setFechaIngeso(String fechaIngeso) {
-        this.fechaIngeso = fechaIngeso;
+    public void setFechaIngreso(String fechaIngeso) {
+        this.fechaIngreso = fechaIngeso;
     }
 
     public String getFechaEgreso() {
