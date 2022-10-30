@@ -28,6 +28,6 @@ export class ExperienciaService {
   }
 
   public delete(id:number): Observable<any>{
-    return this.httpClient.delete<any>(this.expURL + `eliminar/${id}`);
+    return this.httpClient.delete<any>(this.expURL + `delete/${id}`);
   }
 }

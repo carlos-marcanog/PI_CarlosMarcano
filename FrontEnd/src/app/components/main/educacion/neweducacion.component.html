@@ -1,0 +1,48 @@
+<div class="modal fade" id="modalNewEdu">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+        <div class="modal-header">
+            <h4 class="modal-title fw-bold text-uppercase">Agregar Nueva Educación</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+            <div class="container-form">
+            <p class="text-black-50">Por favor complete los campos</p>
+                <form #form="ngForm" (ngSubmit)="onCreate()" novalidate>
+
+                    <div class="form-floating mb-2">
+                        <input type="text" class="form-control" id="nombreEdu" name="nombreEdu" [(ngModel)]="nombreEdu" placeholder="Educacion" required>
+                        <label class="form-label" for="nombreEdu">Instituto Educativo:</label>
+                    </div>
+
+
+                    <div class="form-floating mb-2">
+                        <input type="text" class="form-control" id="ubicacion" name="ubicacion" [(ngModel)]="ubicacion" placeholder="Descripcion" required>
+                        <label class="form-label" for="ubicacion">Ubicación:</label>
+                    </div>
+
+                    <div class="form-floating mb-2">
+                        <input type="text" class="form-control" id="anioEgreso" name="anioEgreso" [(ngModel)]="anioEgreso" placeholder="Cargo" required>
+                        <label class="form-label" for="anioEgreso">Año de Egreso:</label>
+                    </div>
+
+                    <div class="form-floating mb-2">
+                        <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="titulo" placeholder="Fecha Ingreso"required>
+                        <label class="form-label" for="titulo">Titulo Obtenido</label>
+                    </div>
+
+                    <div class="botones">
+                        <button class="btn btn-primary m-4" data-bs-dismiss="modal"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+           
+        </div>
+    </div>
+  </div>
+</div>

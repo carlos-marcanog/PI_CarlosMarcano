@@ -21,14 +21,13 @@
                     </ul>
                 </td>
                 <td>
-                    <button *ngIf="isLogged"><i class="fa-solid fa-pen-to-square"></i></button>
+                    <button class="btn btn-warning" *ngIf="isLogged" routerLink="/editexp/{{Experiencia.id}}"><i class="fa-solid fa-pen-to-square"></i></button>
                 </td>
                 <td>
-                    <button *ngIf="isLogged"><i class="fa-solid fa-trash" ></i> </button>
+                    <button class="btn btn-danger" (click)="delete(Experiencia.id)" *ngIf="isLogged"><i class="fa-solid fa-trash" ></i> </button>
                 </td>
             </tr>
         </tbody>
     </table>
 </div>
 <app-new-experiencia></app-new-experiencia>
-<app-editar-experiencia></app-editar-experiencia>

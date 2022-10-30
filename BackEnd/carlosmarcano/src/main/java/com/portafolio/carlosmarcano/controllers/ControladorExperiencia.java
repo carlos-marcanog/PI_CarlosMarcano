@@ -26,6 +26,11 @@ public class ControladorExperiencia {
         return new ResponseEntity(list, HttpStatus.OK);
     }
 
+    @GetMapping("/detalle/{id}")
+    public ResponseEntity obtenerExp(@PathVariable("id") int id) {
+        return new ResponseEntity(servicioExperiencia.getOne(id), HttpStatus.OK);
+    }
+
     @PostMapping("/crear")
     public ResponseEntity<?> create(@RequestBody DtoExperiencia dtoExperiencia){
         if(StringUtils.isBlank(dtoExperiencia.getNombreExp())){
@@ -66,11 +71,9 @@ public class ControladorExperiencia {
         return new ResponseEntity(new Mensaje("Experiencia Actualizada"), HttpStatus.OK);
     }
 
-    @DeleteMapping("/eliminar/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") int id){
-        if (servicioExperiencia.existsById(id)){
-            return new ResponseEntity(new Mensaje("El ID No Existe"), HttpStatus.BAD_REQUEST);
-        }
+
         servicioExperiencia.delete(id);
 
         return new ResponseEntity(new Mensaje("Experiencia Eliminada"), HttpStatus.OK);

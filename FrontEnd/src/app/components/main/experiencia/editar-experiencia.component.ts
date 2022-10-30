@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Experiencia } from 'src/app/models/modeloExperiencia';
 import { ExperienciaService } from 'src/app/services/experiencia.service';
 
@@ -10,25 +10,24 @@ import { ExperienciaService } from 'src/app/services/experiencia.service';
 })
 export class EditarExperienciaComponent implements OnInit {
   expLab : Experiencia = null; 
-  constructor(private servicioExp: ExperienciaService, private actRouter: ActivatedRoute) { }
+  constructor(private servicioExp: ExperienciaService, private actRouter: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     const id = this.actRouter.snapshot.params['id'];
     this.servicioExp.detalle(id).subscribe( data => {
       this.expLab = data;
     }, err =>{
-      alert("No se pudo editar la Experiencia");
-      window.location.reload();
+      alert("No se pudo editar la Experiencia en OnINIT");
     });
   }
 
   onUpdate(): void{
     const id = this.actRouter.snapshot.params['id'];
     this.servicioExp.update(id, this.expLab).subscribe( data => {
-      window.location.reload();
+      this.router.navigate(['']);
     }, err => {
-      alert("No se pudo editar la Experiencia");
-      window.location.reload();
+      alert("No se pudo editar la Experiencia en OnUpdate");
+      this.router.navigate(['']);
     })
   }
 }
