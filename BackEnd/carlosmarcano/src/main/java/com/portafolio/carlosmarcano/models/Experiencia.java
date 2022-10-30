@@ -14,11 +14,14 @@ public class Experiencia {
     private int id;
     private String nombreExp;
     private String descripcionExp;
+    private String cargo;
+    private String fechaIngreso;
+    private String fechaEgreso;
 
     public Experiencia() {
     }
 
-    public Experiencia(String nombreExp, String descripcionExp) {
+    public Experiencia(String nombreExp, String descripcionExp, String cargo, String fechaIngreso, String fechaEgreso) {
         this.nombreExp = nombreExp;
         this.descripcionExp = descripcionExp;
     }
@@ -45,5 +48,29 @@ public class Experiencia {
 
     public void setDescripcionExp(String descripcionExp) {
         this.descripcionExp = descripcionExp;
+    }
+
+    public String getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+
+    public String getFechaIngreso() {
+        return fechaIngreso;
+    }
+
+    public void setFechaIngreso(String fechaIngreso) {
+        this.fechaIngreso = fechaIngreso;
+    }
+
+    public String getFechaEgreso() {
+        return fechaEgreso;
+    }
+
+    public void setFechaEgreso(String fechaEgreso) {
+        this.fechaEgreso = fechaEgreso;
     }
 }

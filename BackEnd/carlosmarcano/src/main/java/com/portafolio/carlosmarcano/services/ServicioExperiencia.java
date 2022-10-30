@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022.
- */
-
 package com.portafolio.carlosmarcano.services;
 
 import com.portafolio.carlosmarcano.models.Experiencia;

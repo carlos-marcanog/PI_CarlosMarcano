@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("experiencia")
-@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping("/experiencia")
+@CrossOrigin(origins = {"http://localhost:4200"})
 public class ControladorExperiencia {
 
     @Autowired
@@ -34,7 +34,9 @@ public class ControladorExperiencia {
         if (servicioExperiencia.existsByNombreExp(dtoExperiencia.getNombreExp())){
             return new ResponseEntity(new Mensaje("Esa Experiencia ya Existe"), HttpStatus.BAD_REQUEST);
         }
-        Experiencia experiencia = new Experiencia(dtoExperiencia.getNombreExp(), dtoExperiencia.getDescripcionExp());
+        Experiencia experiencia = new Experiencia(dtoExperiencia.getNombreExp(), dtoExperiencia.getDescripcionExp(),
+                                                  dtoExperiencia.getCargo(), dtoExperiencia.getFechaIngeso(),
+                                                  dtoExperiencia.getFechaEgreso());
         servicioExperiencia.save(experiencia);
 
         return new ResponseEntity(new Mensaje("Experiencia Agregada"), HttpStatus.OK);
@@ -56,6 +58,9 @@ public class ControladorExperiencia {
         Experiencia experiencia = servicioExperiencia.getOne(id).get();
         experiencia.setNombreExp(dtoExperiencia.getNombreExp());
         experiencia.setDescripcionExp(dtoExperiencia.getDescripcionExp());
+        experiencia.setCargo(dtoExperiencia.getCargo());
+        experiencia.setFechaIngreso(dtoExperiencia.getFechaIngeso());
+        experiencia.setFechaEgreso(dtoExperiencia.getFechaEgreso());
 
         servicioExperiencia.save(experiencia);
         return new ResponseEntity(new Mensaje("Experiencia Actualizada"), HttpStatus.OK);

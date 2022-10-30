@@ -3,3 +3,21 @@
     padding-left: 20px;
     background-color: white;
 }
+
+.nombreE{
+    display: flex;
+
+}
+
+#fechas{
+    margin-left: 25px;
+}
+
+thead{
+    display: flex;
+    justify-content: space-between;
+}
+
+button{
+    border-radius: 100px;
+}

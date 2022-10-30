@@ -29,6 +29,10 @@ public class Persona {
 
     @NotNull
     @Size(min = 1, max = 50, message = "La Longitud debe ser entre 1 y 50")
-    private String telefono;
+    private String cargo;
+
+    @NotNull
+    @Size(min = 1, max = 1000, message = "La Longitud debe ser entre 1 y 50")
+    private String acercade;
 }
 

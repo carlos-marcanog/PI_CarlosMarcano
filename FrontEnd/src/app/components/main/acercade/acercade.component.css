@@ -11,12 +11,14 @@
     flex-direction: column;
     align-items: center;
     padding-left: 10px;
-    width: 800px;
+    width: 100%;
     border-radius: 100%;
 }
 
 .col-dos{
     margin-left: 50px;
+    margin-right: 20px;
+    margin-top: 10px;
     text-align: justify;
 }
 

@@ -38,7 +38,8 @@ public class ServicioPersonaImp implements ServicioPersona{
         Persona personaBuscada = repositorioPersona.findById(id).get();
         personaBuscada.setNombre(personaAModificar.getNombre());
         personaBuscada.setApellido(personaAModificar.getApellido());
-        personaBuscada.setTelefono(personaAModificar.getTelefono());
+        personaBuscada.setCargo(personaAModificar.getCargo());
+        personaBuscada.setAcercade(personaAModificar.getAcercade());
         return repositorioPersona.save(personaBuscada);
     }
 

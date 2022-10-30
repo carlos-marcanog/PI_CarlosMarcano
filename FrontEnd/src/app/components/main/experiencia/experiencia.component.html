@@ -1,23 +1,32 @@
 <div class="container" id="experiencia">
-    <h4>Experiencia</h4>
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-            <h5>Practia Global - (Tiempo)</h5>
-            <h6>Cargo</h6>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                 Maxime itaque illo deleniti qui? Recusandae quo ducimus 
-                 itaque mollitia quis error architecto deleniti rem impedit. 
-                 Eos quae vitae quos reiciendis pariatur.
-            </p>
-        </li>
-        <li class="list-group-item">
-            <h5>Practia Global - (Tiempo)</h5>
-            <h6>Cargo</h6>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                 Maxime itaque illo deleniti qui? Recusandae quo ducimus 
-                 itaque mollitia quis error architecto deleniti rem impedit. 
-                 Eos quae vitae quos reiciendis pariatur.
-            </p>
-        </li>
-      </ul>
+    <table>
+        <thead>
+            <h4>Experiencia</h4> 
+            <button class="btn btn-success" type="button" routerLink="/nuevaexp" *ngIf="isLogged"><i class="fa-solid fa-plus"></i></button>
+        </thead>
+        <tbody>
+            <!-- <tr *ngFor="let Experiencia of exp">
+                <td>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="nombreE">
+                                <h5>{{Experiencia.nombreExp}}</h5> 
+                                <p id="fechas">{{Experiencia.fechaIngreso}} - {{Experiencia.fechaEgreso}}</p>
+                            </div>
+                            
+                            <h6>{{Experiencia.cargo}}</h6>
+                            <p>{{Experiencia.descripcionExp}}
+                            </p>
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    Editar
+                </td>
+                <td>
+                    Borrar
+                </td>
+            </tr> -->
+        </tbody>
+    </table>
 </div>

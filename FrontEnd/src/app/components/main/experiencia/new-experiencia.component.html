@@ -1,0 +1,34 @@
+            <div class="container">
+            <p class="text-black-50">Complete los Campos</p>
+                <form #form="ngForm" (ngSubmit)="onCreate()" novalidate>
+
+                    <div class="form-group mb-2">
+                        <label for="nombreExp">Empresa:</label>
+                        <input type="text" class="form-control" id="nombreExp" name="nombreExp" [(ngModel)]="nombreExp" required>
+                    </div>
+
+                    <div class="form-group mb-2">
+                        <label for="descripcionExp">Descripcion:</label>
+                        <input type="text" class="form-control" id="descripcionExp" name="descripcionExp" [(ngModel)]="descripcionExp" required>
+                    </div>
+
+                    <div class="form-group mb-2">
+                        <label for="cargo">Cargo:</label>
+                        <input type="text" class="form-control" id="cargo" name="cargo" [(ngModel)]="cargo" required>
+                    </div>
+
+                    <div class="form-group mb-2">
+                        <label for="fechaIngreso">Fecha Ingreso:</label>
+                        <input type="text" class="form-control" id="fechaIngreso" name="fechaIngreso" [(ngModel)]="fechaIngreso" required>
+                    </div>
+
+                    <div class="form-group mb-2">
+                        <label for="fechaEgreso">Fecha Egreso:</label>
+                        <input type="text" class="form-control" id="fechaEgreso" name="fechaEgreso" [(ngModel)]="fechaEgreso">
+                    </div>
+
+                    <div class="botones">
+                        <button class="btn btn-primary m-4"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
+                    </div>
+                </form>
+            </div>
