@@ -11,7 +11,7 @@ import { NuevoUsuario } from '../models/nuevoUsuario';
 })
 export class AuthService {
 
-  URL = environment.URLProd + 'auth/'
+  URL = environment.URL + 'auth/'
 
   constructor(private httpClient: HttpClient) { }
 
