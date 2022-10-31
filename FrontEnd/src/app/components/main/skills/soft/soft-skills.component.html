@@ -1,0 +1,20 @@
+<h4 class="text-center pt-5">Habilidades Blandas</h4>
+<button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#modalNewSoft" *ngIf="isLogged"><i class="fa-solid fa-plus"></i></button>
+        <div class="contenedor-sk3 pb-5">
+            <div class="card" *ngFor="let soft of soft">
+                <img src="../../../../assets/images/comunicacion.png" class="img-com img-fluid card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{soft.nombre}}</h5>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{'width': (soft.porcentaje + '%')}"> {{soft.porcentaje}} %</div>
+                    </div>
+                </div>
+                <td>
+                    <button class="btn btn-warning" *ngIf="isLogged" routerLink="/editsoft/{{soft.id}}"><i class="fa-solid fa-pen-to-square"></i></button>
+                </td>
+                <td>
+                    <button class="btn btn-danger" (click)="delete(soft.id)" *ngIf="isLogged"><i class="fa-solid fa-trash" ></i> </button>
+                </td>
+            </div>
+        </div>
+<app-new-soft></app-new-soft>

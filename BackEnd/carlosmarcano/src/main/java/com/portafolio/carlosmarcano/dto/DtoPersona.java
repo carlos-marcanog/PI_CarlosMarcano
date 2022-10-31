@@ -1,50 +1,33 @@
-package com.portafolio.carlosmarcano.models;
+package com.portafolio.carlosmarcano.dto;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.NotBlank;
 
-@Entity
-public class Persona {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+public class DtoPersona {
 
-    @NotNull
-    @Size(min = 1, max = 50, message = "La Longitud debe ser entre 1 y 50")
+    @NotBlank
     private String nombre;
 
-    @NotNull
-    @Size(min = 1, max = 50, message = "La Longitud debe ser entre 1 y 50")
+    @NotBlank
     private String apellido;
 
-    @NotNull
-    @Size(min = 1, max = 50, message = "La Longitud debe ser entre 1 y 50")
+    @NotBlank
     private String cargo;
 
-    @NotNull
-    @Size(min = 1, max = 1000, message = "La Longitud debe ser entre 1 y 50")
+    @NotBlank
     private String acercade;
 
+    @NotBlank
     private String img;
 
-    public Persona() {
+    public DtoPersona() {
     }
 
-    public Persona(String nombre, String apellido, String cargo, String acercade, String img) {
+    public DtoPersona(String nombre, String apellido, String cargo, String acercade, String img) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.cargo = cargo;
         this.acercade = acercade;
         this.img = img;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNombre() {
@@ -87,4 +70,3 @@ public class Persona {
         this.img = img;
     }
 }
-

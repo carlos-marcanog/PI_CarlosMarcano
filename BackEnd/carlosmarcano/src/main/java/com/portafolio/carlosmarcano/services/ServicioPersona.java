@@ -1,22 +1,46 @@
 package com.portafolio.carlosmarcano.services;
 
 import com.portafolio.carlosmarcano.models.Persona;
+import com.portafolio.carlosmarcano.repository.RepositorioPersona;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
-public interface ServicioPersona {
+@Service
+@Transactional
+public class ServicioPersona {
+    @Autowired
+    RepositorioPersona repositorioPersona;
 
-    List<Persona> listarPersonas();
+    public List<Persona> list(){
+        return repositorioPersona.findAll();
+    }
 
-    Persona traerPersona(Persona persona);
+    public Optional<Persona> getOne(int id){
+        return repositorioPersona.findById(id);
+    }
 
-    Persona guardarPersona(Persona persona);
+    public Optional<Persona> getByNombre(String nombre){
+        return repositorioPersona.findByNombre(nombre);
+    }
 
-    Persona obtenerPersona(Long id);
+    public void save(Persona persona){
+        repositorioPersona.save(persona);
+    }
 
-    Persona modificarPersona(Long id, Persona personaAModificar);
+    public void delete(int id){
+        repositorioPersona.deleteById(id);
+    }
 
-    boolean eliminarPersona(Long id);
+    public boolean existsById(int id){
+        return repositorioPersona.existsById(id);
+    }
+
+    public boolean existsByNombre(String nombre){
+        return repositorioPersona.existsByNombre(nombre);
+    }
 
 }
-

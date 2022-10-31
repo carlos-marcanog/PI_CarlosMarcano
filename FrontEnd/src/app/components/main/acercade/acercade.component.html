@@ -6,6 +6,7 @@
     </div>
     <div class="col-dos"> 
         <h4>Acerca de mí...</h4>
+        <button class="btn btn-warning" *ngIf="isLogged" routerLink="/editpersona/{{persona.id}}"><i class="fa-solid fa-pen-to-square"></i></button>
         <p>{{persona.acercade}}</p>
     </div>
 </div>

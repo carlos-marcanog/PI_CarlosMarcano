@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Educacion } from '../models/modeloEducacion';
 
 @Injectable({
@@ -8,7 +9,7 @@ import { Educacion } from '../models/modeloEducacion';
 })
 export class EducacionService {
 
-  eduURL = 'http://localhost:8090/educacion/'
+  eduURL = environment.URL + 'educacion/'
   constructor(private httpClient: HttpClient) { }
 
   public lista(): Observable<Educacion[]>{

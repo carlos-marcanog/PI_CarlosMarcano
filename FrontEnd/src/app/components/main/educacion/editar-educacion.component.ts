@@ -19,7 +19,7 @@ export class EditarEducacionComponent implements OnInit {
     this.servicioEdu.detalle(id).subscribe({
       next: data => { this.edu = data },
       error: err => { alert("Error al moificar la educacion"), this.router.navigate(['']) }
-    })
+    });
   }
 
   onUpdate(): void{

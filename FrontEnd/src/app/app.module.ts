@@ -13,7 +13,7 @@ import { AcercadeComponent } from './components/main/acercade/acercade.component
 import { ExperienciaComponent } from './components/main/experiencia/experiencia.component';
 import { EducacionComponent } from './components/main/educacion/educacion.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
-import { SkillsComponent } from './components/main/skills/skills.component';
+import { SkillsComponent } from './components/main/skills/hard/skills.component';
 import { ProyectosComponent } from './components/main/proyectos/proyectos.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
@@ -24,6 +24,12 @@ import { NewExperienciaComponent } from './components/main/experiencia/new-exper
 import { EditarExperienciaComponent } from './components/main/experiencia/editar-experiencia.component';
 import { NeweducacionComponent } from './components/main/educacion/neweducacion.component';
 import { EditarEducacionComponent } from './components/main/educacion/editar-educacion.component';
+import { EditSkillsComponent } from './components/main/skills/hard/edit-skills.component';
+import { NewSkillsComponent } from './components/main/skills/hard/new-skills.component';
+import { SoftSkillsComponent } from './components/main/skills/soft/soft-skills.component';
+import { NewSoftComponent } from './components/main/skills/soft/new-soft.component';
+import { EditSoftComponent } from './components/main/skills/soft/edit-soft.component';
+import { EditAcercadeComponent } from './components/main/acercade/edit-acercade.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +51,12 @@ import { EditarEducacionComponent } from './components/main/educacion/editar-edu
     EditarExperienciaComponent,
     NeweducacionComponent,
     EditarEducacionComponent,
+    EditSkillsComponent,
+    NewSkillsComponent,
+    SoftSkillsComponent,
+    NewSoftComponent,
+    EditSoftComponent,
+    EditAcercadeComponent,
   ],
   imports: [
     BrowserModule,

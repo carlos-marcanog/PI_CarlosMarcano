@@ -1,0 +1,38 @@
+<div class="modal fade" id="modalNewSkill">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+        <div class="modal-header">
+            <h4 class="modal-title fw-bold text-uppercase">Agregar Hard Skill</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+            <div class="container-form">
+            <p class="text-black-50">Por favor complete los campos</p>
+                <form #form="ngForm" (ngSubmit)="onCreate()" novalidate>
+
+                    <div class="form-floating mb-2">
+                        <input type="text" class="form-control" id="nombreSkill" name="nombreSkill" [(ngModel)]="nombreSkill" placeholder="Skill" required>
+                        <label class="form-label" for="nombreSkill">Nombre Skill:</label>
+                    </div>
+
+
+                    <div class="form-floating mb-2">
+                        <input type="text" class="form-control" id="porcentaje" name="porcentaje" [(ngModel)]="porcentaje" placeholder="Descripcion" required>
+                        <label class="form-label" for="porcentaje">Porcentaje:</label>
+                    </div>
+
+                    <div class="botones">
+                        <button class="btn btn-primary m-4" data-bs-dismiss="modal"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+           
+        </div>
+    </div>
+  </div>
+</div>

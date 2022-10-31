@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { JwtDto } from '../models/JwtDto';
 import { LoginUsuario } from '../models/loginUsuario';
 import { NuevoUsuario } from '../models/nuevoUsuario';
@@ -10,7 +11,7 @@ import { NuevoUsuario } from '../models/nuevoUsuario';
 })
 export class AuthService {
 
-  authURL = 'http://localhost:8090/auth/'
+  authURL = environment.URL + 'auth/'
 
   constructor(private httpClient: HttpClient) { }
 

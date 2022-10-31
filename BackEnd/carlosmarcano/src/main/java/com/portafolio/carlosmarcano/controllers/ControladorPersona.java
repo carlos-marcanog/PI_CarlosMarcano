@@ -1,54 +1,61 @@
 package com.portafolio.carlosmarcano.controllers;
 
+import com.portafolio.carlosmarcano.dto.DtoPersona;
 import com.portafolio.carlosmarcano.models.Persona;
+import com.portafolio.carlosmarcano.security.controller.Mensaje;
 import com.portafolio.carlosmarcano.services.ServicioPersona;
-import lombok.AllArgsConstructor;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@AllArgsConstructor
 @RequestMapping("/personas")
 @CrossOrigin(origins = "http://localhost:4200")
 
 public class ControladorPersona {
 
-    private final ServicioPersona servicioPersona;
+    @Autowired
+    ServicioPersona servicioPersona;
 
-    @GetMapping("/listar")
-    public ResponseEntity listarPersonas() {
-        return new ResponseEntity(servicioPersona.listarPersonas(), HttpStatus.OK);
+    @GetMapping("/lista")
+    public ResponseEntity<List<Persona>> list(){
+        List<Persona> list = servicioPersona.list();
+        return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
-    @PostMapping("/guardar")
-    public ResponseEntity guardarPersona(@RequestBody Persona persona){
-        return new ResponseEntity(servicioPersona.guardarPersona(persona), HttpStatus.CREATED);
-    }
-
-    @GetMapping("/obtener/{id}")
-    public ResponseEntity obtenerPersona(@PathVariable("id") Long idPersona) {
-        return new ResponseEntity(servicioPersona.obtenerPersona(idPersona), HttpStatus.OK);
-
-    }
-
-    @PreAuthorize("hasRole('ADMIN')")
-    @PutMapping("/modificar/{id}")
-    public ResponseEntity modificarPersona(@PathVariable("id") Long idPersona, @RequestBody Persona persona) {
-        return new ResponseEntity(servicioPersona.modificarPersona(idPersona,persona), HttpStatus.OK);
-    }
-
-    @PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping("/eliminar/{id}")
-    public ResponseEntity eliminarPersona(@PathVariable("id") Long idPersona) {
-        boolean respuesta = servicioPersona.eliminarPersona(idPersona);
-        if (respuesta == true){
-            return new ResponseEntity("Persona Eliminada", HttpStatus.OK);
+    @GetMapping("/detail/{id}")
+    public ResponseEntity<Persona> getById(@PathVariable("id") int id){
+        if (!servicioPersona.existsById(id)){
+            return new ResponseEntity(new Mensaje("ID No Existe"),HttpStatus.NOT_FOUND);
         }
-        else{
-            return new ResponseEntity("Persona No Existe",HttpStatus.NOT_FOUND);
+        Persona persona = servicioPersona.getOne(id).get();
+        return new ResponseEntity(persona, HttpStatus.OK);
+    }
+
+    @PutMapping("/update/{id}")
+    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody DtoPersona dtoPersona){
+        if (!servicioPersona.existsById(id)){
+            return new ResponseEntity(new Mensaje("No existe el ID"), HttpStatus.NOT_FOUND);
         }
+        if (servicioPersona.existsByNombre(dtoPersona.getNombre())
+                && servicioPersona.getByNombre(dtoPersona.getNombre()).get().getId() != id){
+            return new ResponseEntity(new Mensaje("Persona ya existe"), HttpStatus.BAD_REQUEST);
+        }
+        if (StringUtils.isBlank(dtoPersona.getNombre())){
+            return new ResponseEntity(new Mensaje("El campo no puede estar vacio"), HttpStatus.BAD_REQUEST);
+        }
+        Persona persona = servicioPersona.getOne(id).get();
+        persona.setNombre(dtoPersona.getNombre());
+        persona.setApellido(dtoPersona.getApellido());
+        persona.setCargo(dtoPersona.getCargo());
+        persona.setAcercade(dtoPersona.getAcercade());
+        persona.setImg(dtoPersona.getImg());
+        servicioPersona.save(persona);
+        return new ResponseEntity(new Mensaje("Persona Actualizada"), HttpStatus.OK);
     }
 }
