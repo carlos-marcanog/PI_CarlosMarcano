@@ -28,7 +28,7 @@ export class SoftSkillsComponent implements OnInit {
   cargarSofts(): void{
     this.servicioSoft.lista().subscribe({
       next: data => { this.soft = data }
-    })
+    });
   }
 
   delete(id:number){

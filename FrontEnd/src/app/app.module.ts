@@ -30,6 +30,8 @@ import { SoftSkillsComponent } from './components/main/skills/soft/soft-skills.c
 import { NewSoftComponent } from './components/main/skills/soft/new-soft.component';
 import { EditSoftComponent } from './components/main/skills/soft/edit-soft.component';
 import { EditAcercadeComponent } from './components/main/acercade/edit-acercade.component';
+import { EditProyectosComponent } from './components/main/proyectos/edit-proyectos.component';
+import { NewProyectosComponent } from './components/main/proyectos/new-proyectos.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +59,8 @@ import { EditAcercadeComponent } from './components/main/acercade/edit-acercade.
     NewSoftComponent,
     EditSoftComponent,
     EditAcercadeComponent,
+    EditProyectosComponent,
+    NewProyectosComponent,
   ],
   imports: [
     BrowserModule,
