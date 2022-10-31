@@ -9,7 +9,7 @@ import { TokenService } from 'src/app/services/token.service';
   styleUrls: ['./acercade.component.css']
 })
 export class AcercadeComponent implements OnInit {
-  persona: Persona = null;
+  persona: Persona = new Persona("", "", "", "", "");
 
   constructor(public personaService: PersonaService, private tokenService: TokenService) { }
 

@@ -17,7 +17,7 @@ export class EditAcercadeComponent implements OnInit {
   ngOnInit(): void {
     const id = this.actRouter.snapshot.params['id'];
     this.servicioPersona.detalle(id).subscribe({
-      next: data => { this.persona = data },
+      next: data => {  this.persona = data },
       error: err => { alert("Error al moificar la educacion"), this.router.navigate([''])  }
     });
   }
@@ -28,5 +28,9 @@ export class EditAcercadeComponent implements OnInit {
       next: data => { this.router.navigate(['']) },
       error: err => { alert("Error al moificar la educacion"), this.router.navigate(['']) }
     });
+  }
+
+  uploadImg($event: any){
+    
   }
 }

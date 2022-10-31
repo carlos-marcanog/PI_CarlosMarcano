@@ -24,7 +24,7 @@
 
                     <div class="form-group mb-2">
                         <label for="imagen">Imagen:</label>
-                        <input type="text" class="form-control" id="imagen" name="imagen" [(ngModel)]="persona.img" required>
+                        <input type="file" class="form-control" id="imagen" name="imagen" [(ngModel)]="persona.img" (change)="uploadImg($event)" accept=".png, .jpg, .jpeg, .bmp">
                     </div>
 
                     <div class="botones">
