@@ -14,7 +14,7 @@ export const environment = {
     measurementId: 'G-S56ZE0DPKZ',
   },
   production: false,
-  URLDev: 'http://localhost:8090/'  
+  URL: 'http://localhost:8090/'  
 };
 
 /*
