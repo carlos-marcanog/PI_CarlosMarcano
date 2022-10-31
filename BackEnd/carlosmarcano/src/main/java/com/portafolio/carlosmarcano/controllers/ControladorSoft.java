@@ -16,7 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("softs")
-@CrossOrigin(origins = {"http://localhost:4200"})
+@CrossOrigin(origins = {"http://localhost:4200/", "https://portfolio-fend.web.app/"})
 public class ControladorSoft {
 
     @Autowired

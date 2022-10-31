@@ -15,7 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("skills")
-@CrossOrigin(origins = {"http://localhost:4200"})
+@CrossOrigin(origins = {"http://localhost:4200/", "https://portfolio-fend.web.app/"})
 public class ControladorSkills {
     @Autowired
     ServicioSkills servicioSkills;
