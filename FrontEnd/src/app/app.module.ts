@@ -32,6 +32,9 @@ import { EditSoftComponent } from './components/main/skills/soft/edit-soft.compo
 import { EditAcercadeComponent } from './components/main/acercade/edit-acercade.component';
 import { EditProyectosComponent } from './components/main/proyectos/edit-proyectos.component';
 import { NewProyectosComponent } from './components/main/proyectos/new-proyectos.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -67,7 +70,9 @@ import { NewProyectosComponent } from './components/main/proyectos/new-proyectos
     AppRoutingModule,
     HttpClientModule,
     NgCircleProgressModule.forRoot({}),
-    FormsModule
+    FormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage())
   ],
   providers: [
     { provide: interceptorProvider, useValue: undefined }
