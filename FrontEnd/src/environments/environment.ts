@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  URL: 'http://localhost:8090/'
-  //URL: ''
+  URLDev: 'http://localhost:8090/',
+  URLProd: 'https://portfolio-bkend.herokuapp.com/'
 };
 
 /*

@@ -9,7 +9,7 @@ import { Soft } from '../models/modeloSoft';
 })
 export class SoftskillService {
 
-    URL = environment.URL + "softs/"
+    URL = environment.URLProd + "softs/"
   constructor(private httpClient: HttpClient) { }
 
     public lista(): Observable<Soft[]>{
