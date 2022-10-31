@@ -1,0 +1,29 @@
+<div class="container" *ngIf="edu">
+            <p class="text-black-50">Complete los Campos</p>
+                <form #form="ngForm" (ngSubmit)="onUpdate()" novalidate>
+
+                    <div class="form-group mb-2">
+                        <label for="nombreExp">Empresa:</label>
+                        <input type="text" class="form-control" id="nombreExp" name="nombreExp" [(ngModel)]="edu.nombreEdu" required>
+                    </div>
+
+                    <div class="form-group mb-2">
+                        <label for="descripcionExp">Descripcion:</label>
+                        <input type="text" class="form-control" id="descripcionExp" name="descripcionExp" [(ngModel)]="edu.anioEgreso" required>
+                    </div>
+
+                    <div class="form-group mb-2">
+                        <label for="cargo">Cargo:</label>
+                        <input type="text" class="form-control" id="cargo" name="cargo" [(ngModel)]="edu.ubicacion" required>
+                    </div>
+
+                    <div class="form-group mb-2">
+                        <label for="fechaIngreso">Fecha Ingreso:</label>
+                        <input type="text" class="form-control" id="fechaIngreso" name="fechaIngreso" [(ngModel)]="edu.titulo" required>
+                    </div>
+
+                    <div class="botones">
+                        <button class="btn btn-primary m-4"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
+                    </div>
+                </form>
+            </div>

@@ -4,6 +4,20 @@
     background-color: rgb(223, 223, 223);
 }
 
-.container li{
-    background-color: rgb(223, 223, 223);
+.nombreE{
+    display: flex;
+
+}
+
+#fechas{
+    margin-left: 25px;
+}
+
+thead{
+    display: flex;
+    justify-content: space-between;
+}
+
+button{
+    border-radius: 100px;
 }

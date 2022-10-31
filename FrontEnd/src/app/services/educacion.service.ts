@@ -8,11 +8,11 @@ import { Educacion } from '../models/modeloEducacion';
 })
 export class EducacionService {
 
-  eduURL = 'http://localhost:4200/educacion/'
+  eduURL = 'http://localhost:8090/educacion/'
   constructor(private httpClient: HttpClient) { }
 
   public lista(): Observable<Educacion[]>{
-    return this.httpClient.get<Educacion[]>(this.eduURL + 'list');
+    return this.httpClient.get<Educacion[]>(this.eduURL + 'lista');
   }
 
   public detalle(id:number): Observable<Educacion>{

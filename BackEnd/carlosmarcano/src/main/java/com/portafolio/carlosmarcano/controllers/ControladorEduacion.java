@@ -13,14 +13,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("educacion")
+@RequestMapping("/educacion")
 @CrossOrigin(origins = {"http://localhost:4200"})
 public class ControladorEduacion {
 
     @Autowired
     ServicioEduacion servicioEduacion;
 
-    @GetMapping("/list")
+    @GetMapping("/lista")
     public ResponseEntity<List<Educacion>> list(){
         List<Educacion> list = servicioEduacion.list();
         return new ResponseEntity<>(list, HttpStatus.OK);
