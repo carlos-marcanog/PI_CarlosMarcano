@@ -1,0 +1,15 @@
+.container{
+    width: 50%;
+    background-color: rgb(211, 210, 210);
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+h4{
+    text-align: center;
+}
+
+.botones{
+    display: flex;
+    justify-content: center;
+}

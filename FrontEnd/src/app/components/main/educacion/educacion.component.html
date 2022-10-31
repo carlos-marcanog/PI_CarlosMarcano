@@ -1,8 +1,10 @@
 <div class="container" id="Educacion">
     <table>
         <thead>
-            <h4>Educación</h4> 
-            <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#modalNewEdu" *ngIf="isLogged"><i class="fa-solid fa-plus"></i></button>
+            <div class="titulo-content">
+                <h3>Educación</h3> 
+                <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#modalNewEdu" *ngIf="isLogged"><i class="fa-solid fa-plus"></i>Nueva Educación</button>
+            </div>
         </thead>
         <tbody>
             <tr *ngFor="let Educacion of edu">
@@ -10,17 +12,18 @@
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
                             <div class="nombreE">
-                                <h5>{{Educacion.nombreEdu}}</h5> - Año de Egreso: {{Educacion.anioEgreso}}
+                                <h5>{{Educacion.nombreEdu}}</h5>  
+                                <p id="fechas">Año de Egreso: {{Educacion.anioEgreso}}</p>
                             </div>
                             <h6>{{Educacion.ubicacion}}</h6>
                             <h6>Titulo Obtenido:<b>{{Educacion.titulo}}</b></h6>
                         </li>
                     </ul>
                 </td>
-                <td>
+                <td class="botones">
                     <button class="btn btn-warning" *ngIf="isLogged" routerLink="/editedu/{{Educacion.id}}"><i class="fa-solid fa-pen-to-square"></i></button>
                 </td>
-                <td>
+                <td class="botones">
                     <button class="btn btn-danger" (click)="delete(Educacion.id)" *ngIf="isLogged"><i class="fa-solid fa-trash" ></i> </button>
                 </td>
             </tr>
@@ -28,3 +31,4 @@
     </table>
 </div>
 <app-neweducacion></app-neweducacion>
+<hr />

@@ -15,7 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("personas")
-@CrossOrigin(origins = {"http://localhost:4200/", "https://portfolio-fend.web.app/"})
+@CrossOrigin(origins = {"http://localhost:4200", "https://portfolio-fend.web.app/"})
 
 public class ControladorPersona {
 

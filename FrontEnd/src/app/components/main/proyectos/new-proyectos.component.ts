@@ -22,8 +22,7 @@ export class NewProyectosComponent implements OnInit {
   onCreate(): void{
     const proyecto = new Proyectos(this.nombre, this.descripcion, this.enlace, this.img);
     this.servicioProyecto.save(proyecto).subscribe({
-      next: data => { alert("Proyecto Creado"), window.location.reload(); },
-      error: err => { alert("Error al Crear Proyecto"), window.location.reload(); }
+      next: data => { alert("Proyecto Creado"), window.location.reload(); }
     });
   }
 }

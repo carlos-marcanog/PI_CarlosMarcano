@@ -1,4 +1,5 @@
 <div class="container" *ngIf="persona">
+    <h4>Editar Persona</h4>
             <p class="text-black-50">Complete los Campos</p>
                 <form #form="ngForm" (ngSubmit)="onUpdate()" novalidate>
 
@@ -29,6 +30,7 @@
 
                     <div class="botones">
                         <button class="btn btn-primary m-4"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
+                        <button class="btn btn-danger m-4" routerLink=""><i class="fa-solid fa-ban"></i> Cancelar</button>
                     </div>
                 </form>
             </div>

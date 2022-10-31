@@ -22,8 +22,7 @@ export class NeweducacionComponent implements OnInit {
   onCreate(): void{
     const educacion = new Educacion(this.nombreEdu, this.ubicacion, this.anioEgreso, this.titulo);
     this.servicioEducacion.save(educacion).subscribe({
-      next: data => { alert("Educacion Creada"), window.location.reload(); },
-      error: err => { alert("Error al Crear Educación"), window.location.reload(); }
+      next: data => { alert("Educacion Creada"), window.location.reload(); }
     })
   }
 }

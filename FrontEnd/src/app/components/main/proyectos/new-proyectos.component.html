@@ -27,12 +27,14 @@
                         <label class="form-label" for="enlace">Enlace:</label>
                     </div>
 
-                    <div class="form-floating mb-2">
+                    <div class="form-control mb-2">
+                        <label class="form-label" for="enlace">Imagen:</label>
                         <input type="file" class="form-control" id="img" name="img" [(ngModel)]="img" placeholder="Imagen" required>
                     </div>
 
                     <div class="botones">
                         <button class="btn btn-primary m-4" data-bs-dismiss="modal"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
+                        <button class="btn btn-danger m-4" data-bs-dismiss="modal"><i class="fa-solid fa-ban"></i> Cancelar</button>
                     </div>
                 </form>
             </div>

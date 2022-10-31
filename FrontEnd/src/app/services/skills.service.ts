@@ -9,7 +9,7 @@ import { Skills } from '../models/modeloSkills';
 })
 export class SkillsService {
 
-  URL = environment.URL + "skills/"
+  URL = environment.URLDev + "skills/"
   constructor(private httpClient: HttpClient) { }
 
   public lista(): Observable<Skills[]>{

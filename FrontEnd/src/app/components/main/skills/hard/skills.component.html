@@ -1,9 +1,11 @@
 <div class="container" id="skills">
-    <h4>Hard & Soft Skills</h4>
-    <h4 class="text-center">Habilidades Tecnológicas</h4>
-    <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#modalNewSkill" *ngIf="isLogged"><i class="fa-solid fa-plus"></i></button>
-        <div class="contenedor-sk1">
-            <div *ngFor="let skill of skill">
+    <h3>Hard & Soft Skills</h3>
+    <div class="titulo-content">
+        <h4 class="text-center">Habilidades Tecnológicas</h4>
+        <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#modalNewSkill" *ngIf="isLogged"><i class="fa-solid fa-plus"></i> Nueva Hard Skill</button>
+    </div>    
+    <div class="contenedor-sk1">
+            <div class="grafico" *ngFor="let skill of skill">
                 <circle-progress
                     [percent]="(skill.porcentaje)"
                     [radius]="65"     
@@ -25,14 +27,13 @@
                     [responsive]="true"
                 </circle-progress>
 
-                <td>
+                <div class="botones">
                     <button class="btn btn-warning" *ngIf="isLogged" routerLink="/editskill/{{skill.id}}"><i class="fa-solid fa-pen-to-square"></i></button>
-                </td>
-                <td>
                     <button class="btn btn-danger" (click)="delete(skill.id)" *ngIf="isLogged"><i class="fa-solid fa-trash" ></i> </button>
-                </td>
+                </div>
             </div>
         </div>
+</div>
 <app-soft-skills></app-soft-skills>
 <app-new-skills></app-new-skills>
 

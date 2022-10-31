@@ -24,12 +24,8 @@ export class NewExperienciaComponent implements OnInit {
   onCreate(): void{
     const exp = new Experiencia(this.nombreExp, this.descripcionExp, 
       this.cargo, this.fechaIngreso, this.fechaEgreso);
-      this.servicioExp.save(exp).subscribe(data => {
-      alert("Experiencia Agregada");
-      window.location.reload();
-    }, err =>{
-      alert("Error al Agregar Experiencia");
-      window.location.reload();
+      this.servicioExp.save(exp).subscribe({
+      next: data => { alert("Experiencia Creada"), window.location.reload(); }
     });
   }
 

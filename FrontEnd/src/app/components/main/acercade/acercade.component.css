@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: rgb(223, 223, 223);
+    background-color: white;
     height: auto;
 }
 
@@ -37,6 +37,32 @@
 
 #titulo{
     font-weight:bold;
+}
+
+.titulo-component{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button{
+    border-radius: 3px;
+}
+
+.btn{
+    border: none;
+    margin-right: 2px;
+}
+
+.btn-warning{
+    background-color: rgb(253, 115, 2);
+    border: none;
+    color: white;
+}
+
+.btn-warning:hover{
+    transition: 0.3s;
+    background-color: rgb(177, 80, 0);
 }
 
 @media(max-width:821px){

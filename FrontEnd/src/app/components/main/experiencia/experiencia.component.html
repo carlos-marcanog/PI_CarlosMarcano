@@ -1,8 +1,10 @@
 <div class="container" id="experiencia">
     <table>
         <thead>
-            <h4>Experiencia</h4> 
-            <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#modalNewExp" *ngIf="isLogged"><i class="fa-solid fa-plus"></i></button>
+            <div class="titulo-content">
+                <h3>Experiencia</h3> 
+                <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#modalNewExp" *ngIf="isLogged"><i class="fa-solid fa-plus"></i> Nueva Experiencia</button>
+            </div>
         </thead>
         <tbody>
             <tr *ngFor="let Experiencia of exp">
@@ -15,8 +17,7 @@
                             </div>
                             
                             <h6>{{Experiencia.cargo}}</h6>
-                            <p>{{Experiencia.descripcionExp}}
-                            </p>
+                            <p>{{Experiencia.descripcionExp}}</p>
                         </li>
                     </ul>
                 </td>
@@ -31,3 +32,4 @@
     </table>
 </div>
 <app-new-experiencia></app-new-experiencia>
+<hr />

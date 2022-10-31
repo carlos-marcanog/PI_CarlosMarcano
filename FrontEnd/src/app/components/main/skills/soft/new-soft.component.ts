@@ -20,8 +20,7 @@ export class NewSoftComponent implements OnInit {
   onCreate(): void{
     const skill = new Soft(this.nombreSoft, this.porcentaje);
     this.servicioSoft.save(skill).subscribe({
-      next: data => { alert("Soft Creada"), window.location.reload(); },
-      error: err => { alert("Error al Crear Soft"), window.location.reload(); }
+      next: data => { alert("Soft Creada"), window.location.reload(); }
     });
   }
 }
